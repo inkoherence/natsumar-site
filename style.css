@@ -1,0 +1,172 @@
+/* Natsumar — site styles. Same visual language as the app: warm cream,
+   terracotta accent, Montserrat for display, Inter for text. */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #f4f0df;
+  --bg-soft: #fbf8ee;
+  --ink: #1b1a2e;
+  --ink-2: #5d5a6b;
+  --accent: #c8552f;
+  --line: rgba(27, 26, 46, 0.1);
+  --card: #ffffff;
+  --radius: 22px;
+  --shadow: 0 24px 50px -22px rgba(40, 20, 60, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0b24;
+    --bg-soft: #121231;
+    --ink: #f4f0df;
+    --ink-2: rgba(244, 240, 223, 0.7);
+    --accent: #ff8a5c;
+    --line: rgba(255, 255, 255, 0.12);
+    --card: #16163a;
+    --shadow: 0 24px 50px -22px rgba(0, 0, 0, 0.7);
+  }
+}
+
+html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
+.hero > * { min-width: 0; }
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Bilingual pages: every translatable block carries lang="en" or lang="es";
+   the <html data-lang> set by lang.js hides the other one. Without JS both
+   show, which is still correct, just longer. */
+html[data-lang="es"] [lang="en"]:not(html),
+html[data-lang="en"] [lang="es"]:not(html) { display: none !important; }
+
+/* ── Nav ── */
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1120px; margin: 0 auto; padding: 1.25rem 1.5rem;
+}
+.wordmark {
+  font-family: "Montserrat", sans-serif; font-weight: 900;
+  font-size: 1.6rem; letter-spacing: -0.05em;
+}
+.lang-switch { display: flex; gap: 0.25rem; font-size: 0.85rem; font-weight: 600; }
+.lang-switch a {
+  padding: 0.3rem 0.65rem; border-radius: 999px; color: var(--ink-2);
+  border: 1px solid transparent;
+}
+.lang-switch a[aria-current="true"] { color: var(--ink); border-color: var(--line); background: var(--bg-soft); }
+
+/* ── Hero ── */
+.hero {
+  max-width: 1120px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+  display: grid; grid-template-columns: 1.05fr 1fr; gap: 3rem; align-items: center;
+}
+.kicker {
+  font-weight: 700; font-size: 0.8rem; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+}
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); font-weight: 900; letter-spacing: -0.04em; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p.lead { font-size: 1.15rem; color: var(--ink-2); margin: 1.25rem 0 2rem; max-width: 32rem; }
+
+.stores { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.store-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.8rem 1.25rem; border-radius: 14px;
+  background: var(--ink); color: var(--bg); font-weight: 600;
+}
+.store-btn svg { width: 22px; height: 22px; }
+/* Until the store listings exist the buttons are shown but inert. */
+.store-btn.is-soon { opacity: 0.55; pointer-events: none; }
+.store-btn small { display: block; font-size: 0.7rem; font-weight: 500; opacity: 0.8; line-height: 1; }
+.soon-note { margin-top: 0.75rem; font-size: 0.85rem; color: var(--ink-2); }
+
+.fan { position: relative; height: 560px; }
+.fan img {
+  position: absolute; top: 50%; left: 50%; width: 230px; height: auto; aspect-ratio: 9 / 19.5;
+  object-fit: cover; border-radius: 30px; box-shadow: var(--shadow);
+  outline: 5px solid rgba(255, 255, 255, 0.9); outline-offset: -1px;
+}
+.fan img:nth-child(1) { transform: translate(-115%, -48%) rotate(-9deg); }
+.fan img:nth-child(3) { transform: translate(15%, -48%) rotate(9deg); }
+.fan img:nth-child(2) { transform: translate(-50%, -52%); width: 250px; z-index: 2; }
+
+/* ── Features ── */
+.section { max-width: 1120px; margin: 0 auto; padding: 4rem 1.5rem; }
+.section h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 2rem; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.card h3 { font-size: 1.1rem; margin: 0.75rem 0 0.4rem; }
+.card p { color: var(--ink-2); font-size: 0.95rem; }
+.card .icon {
+  width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center;
+  background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent);
+}
+.card .icon svg { width: 22px; height: 22px; }
+
+.strip { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.75rem; }
+.strip img { width: 100%; height: auto; aspect-ratio: 9 / 19.5; object-fit: cover; border-radius: 16px; box-shadow: var(--shadow); }
+
+/* ── Footer ── */
+.footer { border-top: 1px solid var(--line); }
+.footer .inner {
+  max-width: 1120px; margin: 0 auto; padding: 2rem 1.5rem;
+  display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between;
+  color: var(--ink-2); font-size: 0.9rem;
+}
+.footer nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.footer nav a:hover { color: var(--ink); }
+
+/* ── Legal / support pages ── */
+.doc { max-width: 760px; margin: 0 auto; padding: 1rem 1.5rem 5rem; }
+.doc h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; margin: 1rem 0 0.5rem; }
+.doc h2 { font-size: 1.25rem; margin: 2.25rem 0 0.75rem; }
+.doc h3 { font-size: 1.02rem; margin: 1.5rem 0 0.5rem; }
+.doc p, .doc li { color: var(--ink-2); margin-bottom: 0.75rem; }
+.doc strong { color: var(--ink); }
+.doc ul, .doc ol { padding-left: 1.4rem; margin-bottom: 0.75rem; }
+.doc a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.doc .meta { font-size: 0.875rem; color: var(--ink-2); }
+.doc table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1rem; font-size: 0.92rem; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--line); color: var(--ink-2); }
+.doc th { color: var(--ink); font-weight: 600; }
+.doc .callout {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 1rem 1.25rem; margin: 1rem 0;
+}
+.doc details { border-bottom: 1px solid var(--line); padding: 0.9rem 0; }
+.doc summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+.doc details p, .doc details ol { margin-top: 0.6rem; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 1rem; padding-top: 1rem; }
+  .fan { height: 440px; }
+  .fan img { width: 170px; border-radius: 24px; }
+  .fan img:nth-child(2) { width: 186px; }
+  .grid { grid-template-columns: 1fr; }
+  .strip { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 480px) {
+  .fan img { width: 132px; }
+  .fan img:nth-child(2) { width: 146px; }
+  .fan { height: 340px; }
+}
