@@ -18,7 +18,11 @@
     });
   }
 
-  function load(img) { if (img && img.dataset.src) { img.src = img.dataset.src; delete img.dataset.src; } }
+  function load(img) {
+    if (!img || !img.dataset.src) return;
+    if (img.dataset.srcset) { img.srcset = img.dataset.srcset; delete img.dataset.srcset; }
+    img.src = img.dataset.src; delete img.dataset.src;
+  }
 
   // Crossfade the phone screen and the ambient tint together.
   function cycle() {
@@ -76,7 +80,7 @@
     if (!("IntersectionObserver" in window) || reduce) { els.forEach(function (e) { e.classList.add("in"); }); return; }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-    }, { rootMargin: "0px 0px -12% 0px" });
+    }, { rootMargin: "0px 0px -4% 0px" });
     els.forEach(function (e) { io.observe(e); });
   }
 

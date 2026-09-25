@@ -2,6 +2,12 @@
    terracotta accent, Montserrat for display, Inter for text, and the art as
    the protagonist. Dark mode uses the app's warm ink palette. */
 
+/* Fonts, self-hosted (variable woff2, latin + latin-ext). Japanese falls back to the system font. */
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(/fonts/inter-latin-ext-UcC73FwrK3.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(/fonts/inter-latin-UcC73FwrK3.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 700 900; font-display: swap; src: url(/fonts/montserrat-latin-ext-JTUSjIg1_i.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 700 900; font-display: swap; src: url(/fonts/montserrat-latin-JTUSjIg1_i.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -221,7 +227,8 @@ html[data-lang]:not([data-lang="ja"]) [lang="ja"]:not(html) { display: none !imp
 .hero .intro > .lead { animation-delay: 0.4s; }
 .hero .intro > .stores { animation-delay: 0.55s; }
 .hero .intro > .soon-note { animation-delay: 0.65s; }
-@keyframes up { from { opacity: 0; transform: translateY(30px); filter: blur(6px); } }
+/* No opacity: the text is painted (and counted for LCP) from the first frame. */
+@keyframes up { from { transform: translateY(30px); filter: blur(8px); } }
 
 /* ── Sections ── */
 .section { max-width: var(--max); margin: 0 auto; padding: 5.5rem 1.5rem; }
@@ -472,3 +479,35 @@ html[data-status="ok"] .invalid, html[data-status="invalid"] .ok { display: none
 @media (prefers-color-scheme: dark) {
   .phone, .mini { box-shadow: 0 0 0 1px rgba(244, 240, 223, 0.14), var(--shadow-lg), inset 0 0 0 1.5px rgba(255, 255, 255, 0.14); }
 }
+
+/* ── Gallery pages (one per style) ── */
+.hero-wrap.small { min-height: 0; }
+.g-head { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 1.5rem 1.5rem 3.5rem; text-align: center; animation: up 1s 0.1s var(--ease) both; }
+.crumbs { display: flex; justify-content: center; gap: 0.6rem; font-size: 0.85rem; color: var(--ink-2); margin-bottom: 1.5rem; }
+.js .tile[data-reveal] { filter: none; transform: translateY(18px) scale(0.98); transition-duration: 0.6s; }
+.js .tile[data-reveal].in { transform: none; }
+.crumbs a:hover { color: var(--ink); }
+.g-head .kicker { justify-content: center; }
+.g-head h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); font-weight: 900; letter-spacing: -0.045em; }
+.g-head .count { margin-top: 1rem; font-weight: 600; color: var(--accent); }
+.g-intro { max-width: 40rem; margin: 1.5rem auto 0; color: var(--ink-2); font-size: 1.08rem; display: grid; gap: 0.9rem; }
+.gallery { max-width: var(--max); margin: 0 auto; padding: 1rem 1.5rem 3rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1.1rem; }
+.tile { position: relative; margin: 0; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 9 / 19.5; background: var(--bg-soft); }
+.tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
+.tile:hover img { transform: scale(1.05); }
+.tile figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 2.5rem 1rem 0.9rem; color: #fff; font-weight: 600; font-size: 0.9rem;
+  background: linear-gradient(to top, rgba(10, 8, 8, 0.7), transparent); opacity: 0; transform: translateY(8px);
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+}
+.tile:hover figcaption, .tile:focus-within figcaption { opacity: 1; transform: none; }
+.styles.three { grid-template-columns: repeat(3, 1fr); }
+a.style { display: block; }
+@media (max-width: 860px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+  .tile figcaption { opacity: 1; transform: none; font-size: 0.8rem; padding: 2rem 0.75rem 0.7rem; }
+}
+/* 404 */
+.lost { min-height: 70svh; display: grid; place-items: center; text-align: center; padding: 2rem 1.5rem; }
+.lost h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; letter-spacing: -0.05em; }
+.lost p { color: var(--ink-2); margin: 1rem auto 2rem; max-width: 26rem; }

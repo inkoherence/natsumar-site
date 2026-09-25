@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/lang.js"></script>
+  <script>
+    // Landing page of the double opt-in link (marketing-confirm Edge Function
+    // redirects here with ?status=ok|invalid).
+    var ok = new URLSearchParams(location.search).get("status") === "ok";
+    document.documentElement.setAttribute("data-status", ok ? "ok" : "invalid");
+    if (!ok) document.addEventListener("DOMContentLoaded", function () { document.title = "Natsumar"; });
+  </script>
+  <title>Abonnement confirmé — Natsumar</title>
+  <meta name="description" content="Natsumar">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://natsumar.com/fr/confirmed.html">
+  <link rel="alternate" hreflang="en" href="https://natsumar.com/confirmed.html">
+  <link rel="alternate" hreflang="es" href="https://natsumar.com/es/confirmed.html">
+  <link rel="alternate" hreflang="fr" href="https://natsumar.com/fr/confirmed.html">
+  <link rel="alternate" hreflang="it" href="https://natsumar.com/it/confirmed.html">
+  <link rel="alternate" hreflang="pt" href="https://natsumar.com/pt/confirmed.html">
+  <link rel="alternate" hreflang="de" href="https://natsumar.com/de/confirmed.html">
+  <link rel="alternate" hreflang="ja" href="https://natsumar.com/ja/confirmed.html">
+  <link rel="alternate" hreflang="x-default" href="https://natsumar.com/confirmed.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Natsumar">
+  <meta property="og:url" content="https://natsumar.com/fr/confirmed.html">
+  <meta property="og:title" content="Abonnement confirmé — Natsumar">
+  <meta property="og:description" content="Natsumar">
+  <meta property="og:image" content="https://natsumar.com/img/og/og-home.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="it_IT">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Abonnement confirmé — Natsumar">
+  <meta name="twitter:description" content="Natsumar">
+  <meta name="twitter:image" content="https://natsumar.com/img/og/og-home.jpg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin-UcC73FwrK3.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-latin-JTUSjIg1_i.woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="confirm-page">
+  <div class="cols soft" aria-hidden="true"><div class="col"><img src="/img/art/302-360.webp" alt="Fond d’écran « My neighbours » · style Jours anime" width="360" height="797"><img src="/img/art/263-360.webp" alt="Fond d’écran « The Purple Room » · style Riviera à l’aérographe" width="360" height="797"><img src="/img/art/224-360.webp" alt="Fond d’écran « Twilight Ocean Gaze » · style Encre et sel" width="360" height="797"><img src="/img/art/237-360.webp" alt="Fond d’écran « Moonlit Serenade » · style Encre et sel" width="360" height="797"><img src="/img/art/259-360.webp" alt="Fond d’écran « A Dream, a Bedroom » · style Riviera à l’aérographe" width="360" height="797"><img src="/img/art/227-360.webp" alt="Fond d’écran « Lunar Rose Night » · style Encre et sel" width="360" height="797"></div><div class="col"><img src="/img/art/269-360.webp" alt="Fond d’écran « A Mediterranean Morning » · style Carte postale pastel" width="360" height="797"><img src="/img/art/283-360.webp" alt="Fond d’écran « A bath in Capri » · style Carte postale pastel" width="360" height="797"><img src="/img/art/272-360.webp" alt="Fond d’écran « Umbrella Solitude » · style Carte postale pastel" width="360" height="797"><img src="/img/art/297-360.webp" alt="Fond d’écran « Desert Lounge » · style Carte postale pastel" width="360" height="797"><img src="/img/art/264-360.webp" alt="Fond d’écran « Where we started dreaming » · style Carte postale pastel" width="360" height="797"><img src="/img/art/280-360.webp" alt="Fond d’écran « You're my Oasis » · style Carte postale pastel" width="360" height="797"></div><div class="col"><img src="/img/art/300-360.webp" alt="Fond d’écran « Train to nowhere » · style Jours anime" width="360" height="797"><img src="/img/art/314-360.webp" alt="Fond d’écran « My first job » · style Jours anime" width="360" height="797"><img src="/img/art/309-360.webp" alt="Fond d’écran « I'll wait for you » · style Jours anime" width="360" height="797"><img src="/img/art/315-360.webp" alt="Fond d’écran « Sunset Store » · style Jours anime" width="360" height="797"><img src="/img/art/305-360.webp" alt="Fond d’écran « Everybody left but you » · style Jours anime" width="360" height="797"><img src="/img/art/303-360.webp" alt="Fond d’écran « I'll always be with you » · style Jours anime" width="360" height="797"></div><div class="col"><img src="/img/art/243-360.webp" alt="Fond d’écran « Sunset Promise » · style Riviera à l’aérographe" width="360" height="797"><img src="/img/art/254-360.webp" alt="Fond d’écran « The End of Summer » · style Riviera à l’aérographe" width="360" height="797"><img src="/img/art/251-360.webp" alt="Fond d’écran « Poolside Geometry » · style Riviera à l’aérographe" width="360" height="797"><img src="/img/art/253-360.webp" alt="Fond d’écran « Nothing but your memory » · style Riviera à l’aérographe" width="360" height="797"><img src="/img/art/246-360.webp" alt="Fond d’écran « Yellow Roadtrip » · style Riviera à l’aérographe" width="360" height="797"><img src="/img/art/245-360.webp" alt="Fond d’écran « Yellow Stop » · style Riviera à l’aérographe" width="360" height="797"></div><div class="col"><img src="/img/art/312-360.webp" alt="Fond d’écran « This can't be real » · style Jours anime" width="360" height="797"><img src="/img/art/306-360.webp" alt="Fond d’écran « I'll find you » · style Jours anime" width="360" height="797"><img src="/img/art/229-360.webp" alt="Fond d’écran « Marine Breeze Portrait » · style Encre et sel" width="360" height="797"><img src="/img/art/240-360.webp" alt="Fond d’écran « Poolside Sun Nap » · style Encre et sel" width="360" height="797"><img src="/img/art/233-360.webp" alt="Fond d’écran « Dusk Ocean Glance » · style Encre et sel" width="360" height="797"><img src="/img/art/331-360.webp" alt="Fond d’écran « What will happen now? » · style Jours anime" width="360" height="797"></div><div class="col"><img src="/img/art/290-360.webp" alt="Fond d’écran « Surf Paradise » · style Jours anime" width="360" height="797"><img src="/img/art/299-360.webp" alt="Fond d’écran « We worked there » · style Jours anime" width="360" height="797"><img src="/img/art/320-360.webp" alt="Fond d’écran « Danger swims » · style Jours anime" width="360" height="797"><img src="/img/art/323-360.webp" alt="Fond d’écran « Tropical Breeze Café » · style Jours anime" width="360" height="797"><img src="/img/art/325-360.webp" alt="Fond d’écran « Veracruz Promenade » · style Carte postale pastel" width="360" height="797"><img src="/img/art/332-360.webp" alt="Fond d’écran « This is life » · style Carte postale pastel" width="360" height="797"></div><div class="col"><img src="/img/art/222-360.webp" alt="Fond d’écran « Platinum Thai » · style Encre et sel" width="360" height="797"><img src="/img/art/225-360.webp" alt="Fond d’écran « Mediterranean Promenade » · style Encre et sel" width="360" height="797"><img src="/img/art/231-360.webp" alt="Fond d’écran « Resort Lounge View » · style Encre et sel" width="360" height="797"><img src="/img/art/271-360.webp" alt="Fond d’écran « All I need » · style Encre et sel" width="360" height="797"><img src="/img/art/288-360.webp" alt="Fond d’écran « Sunday Morning with You » · style Encre et sel" width="360" height="797"><img src="/img/art/304-360.webp" alt="Fond d’écran « Down to the Paradise » · style Encre et sel" width="360" height="797"></div></div>
+  <nav class="nav">
+    <a class="wordmark" href="/fr/">natsumar</a>
+  </nav>
+
+  <main class="confirm">
+    <div class="card">
+      <div class="fanlet" aria-hidden="true"><img src="/img/art/269-360.webp" alt="Fond d’écran « A Mediterranean Morning » · style Carte postale pastel"><img src="/img/art/283-360.webp" alt="Fond d’écran « A bath in Capri » · style Carte postale pastel"><img src="/img/art/302-360.webp" alt="Fond d’écran « My neighbours » · style Jours anime"></div>
+      <div class="ok">
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h1 lang="fr">Abonnement confirmé</h1>
+        <p lang="fr">Merci d’avoir confirmé. Nous vous écrirons uniquement pour les nouveaux fonds d’écran, les offres et la future boutique Natsumar. Vous pouvez vous désabonner à tout moment.</p>
+      </div>
+      <div class="invalid">
+        <div class="badge muted"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></div>
+        <h1 lang="fr">Ce lien ne fonctionne pas</h1>
+        <p lang="fr">Il a peut-être expiré ou déjà été utilisé. Si vous souhaitez toujours recevoir nos e-mails, réactivez-les depuis votre compte dans l’app.</p>
+      </div>
+      <a class="back" href="/fr/"><span lang="fr">Découvrir Natsumar</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="inner">
+      <div class="brand"><a class="wordmark" href="/fr/">natsumar</a><p>© 2026</p></div>
+      <nav>
+        <a href="/fr/support.html"><span lang="fr">Assistance</span></a>
+        <a href="/fr/privacy.html"><span lang="fr">Confidentialité</span></a>
+        <a href="/fr/terms.html"><span lang="fr">Conditions</span></a>
+      </nav>
+      <div class="lang-switch"><a href="/confirmed.html" hreflang="en">EN</a><a href="/es/confirmed.html" hreflang="es">ES</a><a href="/fr/confirmed.html" hreflang="fr">FR</a><a href="/it/confirmed.html" hreflang="it">IT</a><a href="/pt/confirmed.html" hreflang="pt">PT</a><a href="/de/confirmed.html" hreflang="de">DE</a><a href="/ja/confirmed.html" hreflang="ja">JA</a></div>
+    </div>
+  </footer>
+  <script>
+    // Seamless upward drift for the background wall.
+    document.querySelectorAll(".col").forEach(function (c) { Array.prototype.slice.call(c.children).forEach(function (i) { c.appendChild(i.cloneNode(true)); }); });
+  </script>
+</body>
+</html>

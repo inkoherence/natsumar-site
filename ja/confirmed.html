@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja" data-lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/lang.js"></script>
+  <script>
+    // Landing page of the double opt-in link (marketing-confirm Edge Function
+    // redirects here with ?status=ok|invalid).
+    var ok = new URLSearchParams(location.search).get("status") === "ok";
+    document.documentElement.setAttribute("data-status", ok ? "ok" : "invalid");
+    if (!ok) document.addEventListener("DOMContentLoaded", function () { document.title = "Natsumar"; });
+  </script>
+  <title>登録が完了しました — Natsumar</title>
+  <meta name="description" content="Natsumar">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://natsumar.com/ja/confirmed.html">
+  <link rel="alternate" hreflang="en" href="https://natsumar.com/confirmed.html">
+  <link rel="alternate" hreflang="es" href="https://natsumar.com/es/confirmed.html">
+  <link rel="alternate" hreflang="fr" href="https://natsumar.com/fr/confirmed.html">
+  <link rel="alternate" hreflang="it" href="https://natsumar.com/it/confirmed.html">
+  <link rel="alternate" hreflang="pt" href="https://natsumar.com/pt/confirmed.html">
+  <link rel="alternate" hreflang="de" href="https://natsumar.com/de/confirmed.html">
+  <link rel="alternate" hreflang="ja" href="https://natsumar.com/ja/confirmed.html">
+  <link rel="alternate" hreflang="x-default" href="https://natsumar.com/confirmed.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Natsumar">
+  <meta property="og:url" content="https://natsumar.com/ja/confirmed.html">
+  <meta property="og:title" content="登録が完了しました — Natsumar">
+  <meta property="og:description" content="Natsumar">
+  <meta property="og:image" content="https://natsumar.com/img/og/og-home.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="it_IT">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="登録が完了しました — Natsumar">
+  <meta name="twitter:description" content="Natsumar">
+  <meta name="twitter:image" content="https://natsumar.com/img/og/og-home.jpg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin-UcC73FwrK3.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-latin-JTUSjIg1_i.woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="confirm-page">
+  <div class="cols soft" aria-hidden="true"><div class="col"><img src="/img/art/302-360.webp" alt="壁紙「My neighbours」・アニメの日々" width="360" height="797"><img src="/img/art/263-360.webp" alt="壁紙「The Purple Room」・エアブラシ・リヴィエラ" width="360" height="797"><img src="/img/art/224-360.webp" alt="壁紙「Twilight Ocean Gaze」・インクと潮風" width="360" height="797"><img src="/img/art/237-360.webp" alt="壁紙「Moonlit Serenade」・インクと潮風" width="360" height="797"><img src="/img/art/259-360.webp" alt="壁紙「A Dream, a Bedroom」・エアブラシ・リヴィエラ" width="360" height="797"><img src="/img/art/227-360.webp" alt="壁紙「Lunar Rose Night」・インクと潮風" width="360" height="797"></div><div class="col"><img src="/img/art/269-360.webp" alt="壁紙「A Mediterranean Morning」・パステル・ポストカード" width="360" height="797"><img src="/img/art/283-360.webp" alt="壁紙「A bath in Capri」・パステル・ポストカード" width="360" height="797"><img src="/img/art/272-360.webp" alt="壁紙「Umbrella Solitude」・パステル・ポストカード" width="360" height="797"><img src="/img/art/297-360.webp" alt="壁紙「Desert Lounge」・パステル・ポストカード" width="360" height="797"><img src="/img/art/264-360.webp" alt="壁紙「Where we started dreaming」・パステル・ポストカード" width="360" height="797"><img src="/img/art/280-360.webp" alt="壁紙「You're my Oasis」・パステル・ポストカード" width="360" height="797"></div><div class="col"><img src="/img/art/300-360.webp" alt="壁紙「Train to nowhere」・アニメの日々" width="360" height="797"><img src="/img/art/314-360.webp" alt="壁紙「My first job」・アニメの日々" width="360" height="797"><img src="/img/art/309-360.webp" alt="壁紙「I'll wait for you」・アニメの日々" width="360" height="797"><img src="/img/art/315-360.webp" alt="壁紙「Sunset Store」・アニメの日々" width="360" height="797"><img src="/img/art/305-360.webp" alt="壁紙「Everybody left but you」・アニメの日々" width="360" height="797"><img src="/img/art/303-360.webp" alt="壁紙「I'll always be with you」・アニメの日々" width="360" height="797"></div><div class="col"><img src="/img/art/243-360.webp" alt="壁紙「Sunset Promise」・エアブラシ・リヴィエラ" width="360" height="797"><img src="/img/art/254-360.webp" alt="壁紙「The End of Summer」・エアブラシ・リヴィエラ" width="360" height="797"><img src="/img/art/251-360.webp" alt="壁紙「Poolside Geometry」・エアブラシ・リヴィエラ" width="360" height="797"><img src="/img/art/253-360.webp" alt="壁紙「Nothing but your memory」・エアブラシ・リヴィエラ" width="360" height="797"><img src="/img/art/246-360.webp" alt="壁紙「Yellow Roadtrip」・エアブラシ・リヴィエラ" width="360" height="797"><img src="/img/art/245-360.webp" alt="壁紙「Yellow Stop」・エアブラシ・リヴィエラ" width="360" height="797"></div><div class="col"><img src="/img/art/312-360.webp" alt="壁紙「This can't be real」・アニメの日々" width="360" height="797"><img src="/img/art/306-360.webp" alt="壁紙「I'll find you」・アニメの日々" width="360" height="797"><img src="/img/art/229-360.webp" alt="壁紙「Marine Breeze Portrait」・インクと潮風" width="360" height="797"><img src="/img/art/240-360.webp" alt="壁紙「Poolside Sun Nap」・インクと潮風" width="360" height="797"><img src="/img/art/233-360.webp" alt="壁紙「Dusk Ocean Glance」・インクと潮風" width="360" height="797"><img src="/img/art/331-360.webp" alt="壁紙「What will happen now?」・アニメの日々" width="360" height="797"></div><div class="col"><img src="/img/art/290-360.webp" alt="壁紙「Surf Paradise」・アニメの日々" width="360" height="797"><img src="/img/art/299-360.webp" alt="壁紙「We worked there」・アニメの日々" width="360" height="797"><img src="/img/art/320-360.webp" alt="壁紙「Danger swims」・アニメの日々" width="360" height="797"><img src="/img/art/323-360.webp" alt="壁紙「Tropical Breeze Café」・アニメの日々" width="360" height="797"><img src="/img/art/325-360.webp" alt="壁紙「Veracruz Promenade」・パステル・ポストカード" width="360" height="797"><img src="/img/art/332-360.webp" alt="壁紙「This is life」・パステル・ポストカード" width="360" height="797"></div><div class="col"><img src="/img/art/222-360.webp" alt="壁紙「Platinum Thai」・インクと潮風" width="360" height="797"><img src="/img/art/225-360.webp" alt="壁紙「Mediterranean Promenade」・インクと潮風" width="360" height="797"><img src="/img/art/231-360.webp" alt="壁紙「Resort Lounge View」・インクと潮風" width="360" height="797"><img src="/img/art/271-360.webp" alt="壁紙「All I need」・インクと潮風" width="360" height="797"><img src="/img/art/288-360.webp" alt="壁紙「Sunday Morning with You」・インクと潮風" width="360" height="797"><img src="/img/art/304-360.webp" alt="壁紙「Down to the Paradise」・インクと潮風" width="360" height="797"></div></div>
+  <nav class="nav">
+    <a class="wordmark" href="/ja/">natsumar</a>
+  </nav>
+
+  <main class="confirm">
+    <div class="card">
+      <div class="fanlet" aria-hidden="true"><img src="/img/art/269-360.webp" alt="壁紙「A Mediterranean Morning」・パステル・ポストカード"><img src="/img/art/283-360.webp" alt="壁紙「A bath in Capri」・パステル・ポストカード"><img src="/img/art/302-360.webp" alt="壁紙「My neighbours」・アニメの日々"></div>
+      <div class="ok">
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h1 lang="ja">登録が完了しました</h1>
+        <p lang="ja">ご確認ありがとうございます。新着壁紙、お得な情報、今後オープン予定のNatsumarストアについてのみお知らせします。配信はいつでも停止できます。</p>
+      </div>
+      <div class="invalid">
+        <div class="badge muted"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></div>
+        <h1 lang="ja">このリンクは無効です</h1>
+        <p lang="ja">有効期限が切れているか、すでに使用された可能性があります。メールの受け取りを希望される場合は、アプリのアカウント画面から再度オンにしてください。</p>
+      </div>
+      <a class="back" href="/ja/"><span lang="ja">Natsumarを見る</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="inner">
+      <div class="brand"><a class="wordmark" href="/ja/">natsumar</a><p>© 2026</p></div>
+      <nav>
+        <a href="/ja/support.html"><span lang="ja">サポート</span></a>
+        <a href="/ja/privacy.html"><span lang="ja">プライバシー</span></a>
+        <a href="/ja/terms.html"><span lang="ja">利用規約</span></a>
+      </nav>
+      <div class="lang-switch"><a href="/confirmed.html" hreflang="en">EN</a><a href="/es/confirmed.html" hreflang="es">ES</a><a href="/fr/confirmed.html" hreflang="fr">FR</a><a href="/it/confirmed.html" hreflang="it">IT</a><a href="/pt/confirmed.html" hreflang="pt">PT</a><a href="/de/confirmed.html" hreflang="de">DE</a><a href="/ja/confirmed.html" hreflang="ja">JA</a></div>
+    </div>
+  </footer>
+  <script>
+    // Seamless upward drift for the background wall.
+    document.querySelectorAll(".col").forEach(function (c) { Array.prototype.slice.call(c.children).forEach(function (i) { c.appendChild(i.cloneNode(true)); }); });
+  </script>
+</body>
+</html>
