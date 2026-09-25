@@ -50,11 +50,16 @@ h1, h2, h3 {
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 
-/* Bilingual pages: every translatable block carries lang="en" or lang="es";
-   the <html data-lang> set by lang.js hides the other one. Without JS both
-   show, which is still correct, just longer. */
-html[data-lang="es"] [lang="en"]:not(html),
-html[data-lang="en"] [lang="es"]:not(html) { display: none !important; }
+/* Multilingual pages: every translatable block carries lang="en", "es", "fr",
+   "it", "pt", "de" or "ja"; the <html data-lang> set by lang.js hides the
+   others. Without JS every language shows, which is still readable, just long. */
+html[data-lang]:not([data-lang="en"]) [lang="en"]:not(html),
+html[data-lang]:not([data-lang="es"]) [lang="es"]:not(html),
+html[data-lang]:not([data-lang="fr"]) [lang="fr"]:not(html),
+html[data-lang]:not([data-lang="it"]) [lang="it"]:not(html),
+html[data-lang]:not([data-lang="pt"]) [lang="pt"]:not(html),
+html[data-lang]:not([data-lang="de"]) [lang="de"]:not(html),
+html[data-lang]:not([data-lang="ja"]) [lang="ja"]:not(html) { display: none !important; }
 
 /* ── Nav ── */
 .nav {
@@ -71,6 +76,15 @@ html[data-lang="en"] [lang="es"]:not(html) { display: none !important; }
   border: 1px solid transparent;
 }
 .lang-switch a[aria-current="true"] { color: var(--ink); border-color: var(--line); background: var(--bg-soft); }
+/* Seven languages don't fit a phone's nav: lang.js adds a native picker. */
+.lang-select { display: none; }
+@media (max-width: 640px) {
+  .lang-switch a { display: none; }
+  .lang-select {
+    display: block; font: inherit; color: var(--ink); background: var(--bg-soft);
+    border: 1px solid var(--line); border-radius: 999px; padding: 0.35rem 0.8rem;
+  }
+}
 
 /* ── Hero ── */
 .hero {
@@ -81,8 +95,10 @@ html[data-lang="en"] [lang="es"]:not(html) { display: none !important; }
   font-weight: 700; font-size: 0.8rem; letter-spacing: 0.25em;
   text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
 }
-.hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); font-weight: 900; letter-spacing: -0.04em; }
+.hero h1 { font-size: clamp(2.3rem, 4.6vw, 3.5rem); font-weight: 900; letter-spacing: -0.04em; hyphens: auto; }
 .hero h1 em { font-style: normal; color: var(--accent); }
+/* Japanese: break only at the <br>, and no negative tracking on kana. */
+.hero h1:lang(ja) { word-break: keep-all; letter-spacing: 0; }
 .hero p.lead { font-size: 1.15rem; color: var(--ink-2); margin: 1.25rem 0 2rem; max-width: 32rem; }
 
 .stores { display: flex; flex-wrap: wrap; gap: 0.75rem; }

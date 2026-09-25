@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-title-en="Subscription confirmed — Natsumar" data-title-es="Suscripción confirmada — Natsumar" data-title-fr="Abonnement confirmé — Natsumar" data-title-it="Iscrizione confermata — Natsumar" data-title-pt="Inscrição confirmada — Natsumar" data-title-de="Anmeldung bestätigt — Natsumar" data-title-ja="登録が完了しました — Natsumar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="lang.js"></script>
+  <script>
+    // Landing page of the double opt-in link (marketing-confirm Edge Function
+    // redirects here with ?status=ok|invalid).
+    document.documentElement.setAttribute("data-status",
+      new URLSearchParams(location.search).get("status") === "ok" ? "ok" : "invalid");
+  </script>
+  <title>Subscription confirmed — Natsumar</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html[data-status="ok"] .invalid, html[data-status="invalid"] .ok { display: none; }
+    .confirm { min-height: 60vh; display: grid; place-content: center; text-align: center; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="wordmark" href="./">natsumar</a>
+    <div class="lang-switch"><a href="?lang=en" hreflang="en">EN</a><a href="?lang=es" hreflang="es">ES</a><a href="?lang=fr" hreflang="fr">FR</a><a href="?lang=it" hreflang="it">IT</a><a href="?lang=pt" hreflang="pt">PT</a><a href="?lang=de" hreflang="de">DE</a><a href="?lang=ja" hreflang="ja">JA</a></div>
+  </nav>
+
+  <main class="doc confirm" lang="en">
+    <div class="ok"><h1>You’re subscribed</h1><p>Thanks for confirming. We’ll only write about new wallpaper drops, offers and the future Natsumar shop. You can unsubscribe anytime.</p></div>
+    <div class="invalid"><h1>This link doesn’t work</h1><p>It may have expired or already been used. If you still want our emails, turn them on again from your account in the app.</p></div>
+  </main>
+  <main class="doc confirm" lang="es">
+    <div class="ok"><h1>¡Suscripción confirmada!</h1><p>Gracias por confirmar. Solo te escribiremos sobre fondos nuevos, ofertas y la futura tienda de Natsumar. Puedes darte de baja cuando quieras.</p></div>
+    <div class="invalid"><h1>Este enlace no funciona</h1><p>Puede que haya caducado o que ya se haya usado. Si aún quieres recibir nuestros correos, vuelve a activarlos desde tu cuenta en la app.</p></div>
+  </main>
+  <main class="doc confirm" lang="fr">
+    <div class="ok"><h1>Abonnement confirmé</h1><p>Merci d’avoir confirmé. Nous vous écrirons uniquement pour les nouveaux fonds d’écran, les offres et la future boutique Natsumar. Vous pouvez vous désabonner à tout moment.</p></div>
+    <div class="invalid"><h1>Ce lien ne fonctionne pas</h1><p>Il a peut-être expiré ou déjà été utilisé. Si vous souhaitez toujours recevoir nos e-mails, réactivez-les depuis votre compte dans l’app.</p></div>
+  </main>
+  <main class="doc confirm" lang="it">
+    <div class="ok"><h1>Iscrizione confermata</h1><p>Grazie per la conferma. Ti scriveremo solo per nuovi sfondi, offerte e il futuro negozio di Natsumar. Puoi annullare l’iscrizione quando vuoi.</p></div>
+    <div class="invalid"><h1>Questo link non funziona</h1><p>Potrebbe essere scaduto o già stato usato. Se vuoi ancora ricevere le nostre email, riattivale dal tuo account nell’app.</p></div>
+  </main>
+  <main class="doc confirm" lang="pt">
+    <div class="ok"><h1>Inscrição confirmada</h1><p>Obrigado por confirmar. Só vamos escrever sobre novos papéis de parede, ofertas e a futura loja da Natsumar. Você pode cancelar quando quiser.</p></div>
+    <div class="invalid"><h1>Este link não funciona</h1><p>Ele pode ter expirado ou já ter sido usado. Se ainda quiser receber nossos e-mails, ative-os de novo na sua conta, no app.</p></div>
+  </main>
+  <main class="doc confirm" lang="de">
+    <div class="ok"><h1>Anmeldung bestätigt</h1><p>Danke für deine Bestätigung. Wir schreiben dir nur zu neuen Hintergrundbildern, Angeboten und dem künftigen Natsumar-Shop. Du kannst dich jederzeit abmelden.</p></div>
+    <div class="invalid"><h1>Dieser Link funktioniert nicht</h1><p>Er ist vielleicht abgelaufen oder wurde schon verwendet. Wenn du unsere E-Mails weiterhin möchtest, aktiviere sie erneut in deinem Konto in der App.</p></div>
+  </main>
+  <main class="doc confirm" lang="ja">
+    <div class="ok"><h1>登録が完了しました</h1><p>ご確認ありがとうございます。新着壁紙、お得な情報、今後オープン予定のNatsumarストアについてのみお知らせします。配信はいつでも停止できます。</p></div>
+    <div class="invalid"><h1>このリンクは無効です</h1><p>有効期限が切れているか、すでに使用された可能性があります。メールの受け取りを希望される場合は、アプリのアカウント画面から再度オンにしてください。</p></div>
+  </main>
+
+  <footer class="footer">
+    <div class="inner">
+      <p>© 2026 Natsumar</p>
+      <nav>
+        <a href="support.html"><span lang="en">Support</span><span lang="es">Soporte</span><span lang="fr">Assistance</span><span lang="it">Assistenza</span><span lang="pt">Suporte</span><span lang="de">Support</span><span lang="ja">サポート</span></a>
+        <a href="privacy.html"><span lang="en">Privacy</span><span lang="es">Privacidad</span><span lang="fr">Confidentialité</span><span lang="it">Privacy</span><span lang="pt">Privacidade</span><span lang="de">Datenschutz</span><span lang="ja">プライバシー</span></a>
+        <a href="terms.html"><span lang="en">Terms</span><span lang="es">Términos</span><span lang="fr">Conditions</span><span lang="it">Termini</span><span lang="pt">Termos</span><span lang="de">Nutzungsbedingungen</span><span lang="ja">利用規約</span></a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
