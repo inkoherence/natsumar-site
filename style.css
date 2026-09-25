@@ -176,7 +176,7 @@ html[data-lang]:not([data-lang="ja"]) [lang="ja"]:not(html) { display: none !imp
 .hero {
   position: relative; z-index: 1; flex: 1;
   max-width: var(--max); width: 100%; margin: 0 auto; padding: 1rem 1.5rem 3rem;
-  display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: center;
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 7vw, 6.5rem); align-items: center;
 }
 .hero > * { min-width: 0; }
 .kicker {
@@ -370,28 +370,6 @@ html[data-lang]:not([data-lang="ja"]) [lang="ja"]:not(html) { display: none !imp
 .cta .store-btn { background: #fff; color: #0f0d0c; }
 .cta .soon-note { justify-content: center; color: rgba(255, 255, 255, 0.72); }
 
-/* Nav call to action: a glass pill like the language menu, with the app's
-   own round icon in front (drawn in CSS, so every page gets it). */
-.nav-cta {
-  position: relative; display: inline-flex; align-items: center; gap: 0.5rem;
-  padding: 0.62rem 1.05rem 0.62rem 3.05rem; margin-left: 1.6rem; border-radius: 999px;
-  background: var(--glass); border: 1px solid var(--glass-line); color: var(--ink);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4); backdrop-filter: blur(16px) saturate(1.4);
-  font-weight: 700; font-size: 0.9rem; line-height: 1; letter-spacing: -0.005em;
-  box-shadow: 0 6px 18px -10px rgba(60, 30, 20, 0.35);
-  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
-}
-/* The app icon as a badge that breaks out of the pill on the left. */
-.nav-cta::before {
-  content: ""; position: absolute; left: -14px; top: 50%; width: 52px; height: 52px; border-radius: 50%;
-  transform: translateY(-50%); background: #fff url(/img/app-icon-144.webp) center / 92% no-repeat;
-  box-shadow: 0 0 0 2.5px #fff, 0 6px 16px -4px rgba(60, 30, 20, 0.45);
-  transition: transform 0.4s var(--ease);
-}
-.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -10px rgba(60, 30, 20, 0.45); }
-.nav-cta:hover::before { transform: translateY(-50%) rotate(-10deg) scale(1.06); }
-.nav-cta svg { display: block; width: 15px; height: 15px; flex: none; opacity: 0.7; }
-
 /* Store buttons: one band of light crosses both, as if they were one piece.
    Each button shows its slice of a band as wide as the whole row (site.js
    sets --ox, the button's offset in the row, and --rw, the row's width). */
@@ -555,3 +533,38 @@ a.style { display: block; }
 .lost { min-height: 70svh; display: grid; place-items: center; text-align: center; padding: 2rem 1.5rem; }
 .lost h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; letter-spacing: -0.05em; }
 .lost p { color: var(--ink-2); margin: 1rem auto 2rem; max-width: 26rem; }
+
+/* ── Floating app bar (after the hero) ──
+   Like Apple's sticky product bar / the iOS Smart App Banner: icon, name, one
+   line and the two stores, in a glass capsule that only shows when the
+   hero's buttons are out of sight. */
+.dock-bar {
+  position: fixed; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 50;
+  transform: translate(-50%, 140%); opacity: 0; pointer-events: none;
+  transition: transform 0.6s var(--ease), opacity 0.4s var(--ease);
+}
+.dock-bar.show { transform: translate(-50%, 0); opacity: 1; pointer-events: auto; }
+.dock-in {
+  display: flex; align-items: center; gap: 0.75rem; padding: 8px 8px 8px 8px; border-radius: 999px;
+  background: color-mix(in srgb, var(--card) 72%, transparent); border: 1px solid var(--glass-line);
+  -webkit-backdrop-filter: blur(22px) saturate(1.6); backdrop-filter: blur(22px) saturate(1.6);
+  box-shadow: 0 18px 40px -16px rgba(40, 20, 15, 0.45), 0 2px 6px rgba(40, 20, 15, 0.08);
+}
+.dock-icon { width: 44px; height: 44px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px #fff, 0 4px 10px -2px rgba(0, 0, 0, 0.25); }
+.dock-txt { padding-right: 0.6rem; line-height: 1.15; }
+.dock-name { font: 900 1rem/1 "Montserrat", sans-serif; letter-spacing: -0.04em; color: var(--ink); }
+.dock-sub { font-size: 0.78rem; color: var(--ink-2); margin-top: 3px; white-space: nowrap; }
+.dock-store {
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  background: #0f0d0c; color: #fff; transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+}
+.dock-store:hover { transform: translateY(-2px) scale(1.04); }
+.dock-store svg { width: 20px; height: 20px; }
+@media (prefers-color-scheme: dark) { .dock-store { background: #f4f0df; color: #141112; } }
+@media (max-width: 480px) {
+  .dock-bar { left: 12px; right: 12px; transform: translateY(140%); }
+  .dock-bar.show { transform: none; }
+  .dock-in { justify-content: flex-start; }
+  .dock-txt { flex: 1; min-width: 0; }
+  .dock-sub { white-space: normal; }
+}

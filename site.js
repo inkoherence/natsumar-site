@@ -151,7 +151,23 @@
     });
   }
 
+  // The floating app bar shows while no store buttons are on screen: not
+  // over the hero's, not over the final section's. Pages without a hero
+  // (galleries) show it once you start scrolling.
+  function dock() {
+    var bar = document.querySelector(".dock-bar");
+    if (!bar || !("IntersectionObserver" in window)) return;
+    var watched = document.querySelectorAll(".hero .stores, .cta, .g-head h1");
+    var visible = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target); });
+      bar.classList.toggle("show", visible.size === 0);
+    });
+    watched.forEach(function (el) { io.observe(el); });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    dock();
     shineGeometry(); window.addEventListener("resize", shineGeometry);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(shineGeometry);
     tick(); setInterval(tick, 15000);
