@@ -135,7 +135,25 @@
     }, { passive: true });
   }
 
+  // The store buttons share one shine: tell each where it sits in its row.
+  function shineGeometry() {
+    document.querySelectorAll(".stores").forEach(function (row) {
+      var btns = row.querySelectorAll(".store-btn");
+      if (!btns.length) return;
+      // The band spans from the first button's left edge to the last one's
+      // right edge, not the whole (wider) row.
+      var left = Infinity, right = -Infinity;
+      btns.forEach(function (b) { var r = b.getBoundingClientRect(); left = Math.min(left, r.left); right = Math.max(right, r.right); });
+      btns.forEach(function (b) {
+        b.style.setProperty("--ox", (b.getBoundingClientRect().left - left) + "px");
+        b.style.setProperty("--rw", (right - left) + "px");
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    shineGeometry(); window.addEventListener("resize", shineGeometry);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(shineGeometry);
     tick(); setInterval(tick, 15000);
     cycle(); loops(); palette(); reveal(); tilt();
     // GSAP loads with defer before this file, so it is ready here.
