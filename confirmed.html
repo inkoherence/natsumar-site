@@ -7,8 +7,9 @@
   <script>
     // Landing page of the double opt-in link (marketing-confirm Edge Function
     // redirects here with ?status=ok|invalid).
-    document.documentElement.setAttribute("data-status",
-      new URLSearchParams(location.search).get("status") === "ok" ? "ok" : "invalid");
+    var ok = new URLSearchParams(location.search).get("status") === "ok";
+    document.documentElement.setAttribute("data-status", ok ? "ok" : "invalid");
+    if (!ok) document.addEventListener("DOMContentLoaded", function () { document.title = "Natsumar"; });
   </script>
   <title>Subscription confirmed — Natsumar</title>
   <meta name="robots" content="noindex">
