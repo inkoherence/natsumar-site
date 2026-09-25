@@ -313,8 +313,12 @@ html[data-lang]:not([data-lang="ja"]) [lang="ja"]:not(html) { display: none !imp
 .home .tt { font: 900 calc(var(--w) * 0.068) / 1.1 "Montserrat", sans-serif; letter-spacing: -0.02em; margin-top: 4px; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35); }
 .home .shuf { position: absolute; top: 6%; right: 6%; z-index: 2; width: calc(var(--w) * 0.115); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; color: #fff; background: rgba(255, 255, 255, 0.22); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
 .home .shuf svg { width: 45%; height: 45%; }
-.home .apps, .home .dock { display: flex; justify-content: space-between; }
-.home .apps { margin-top: 9%; padding: 0 1.5%; }
+.home .dock { display: flex; justify-content: space-between; }
+.home .apps { margin-top: 9%; padding: 0 1.5%; display: grid; grid-template-columns: repeat(4, var(--ic)); justify-content: space-between; row-gap: calc(var(--w) * 0.07); }
+/* iOS 18 lets icons sit anywhere: keep them to the edges so the art in the
+   middle stays clear. */
+.home .apps .ic:nth-child(odd) { grid-column: 1; }
+.home .apps .ic:nth-child(even) { grid-column: 4; }
 .home .dots { display: flex; justify-content: center; gap: 5px; margin-top: auto; margin-bottom: 4%; }
 .home .dots i { width: 5px; height: 5px; border-radius: 50%; background: rgba(255, 255, 255, 0.45); }
 .home .dots i.on { background: #fff; }
@@ -322,12 +326,12 @@ html[data-lang]:not([data-lang="ja"]) [lang="ja"]:not(html) { display: none !imp
 .home .ic { width: var(--ic); aspect-ratio: 1; border-radius: 26%; display: grid; place-items: center; color: #fff; background: linear-gradient(170deg, var(--a), var(--b)); box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.35); }
 .home .ic svg { width: 56%; height: 56%; }
 /* Colour: swatches and matching wallpapers */
-.palette { position: absolute; inset: 0; z-index: 2; background: var(--bg-soft); padding: 20% 8% 0; }
-.swatches { display: flex; justify-content: space-between; margin-bottom: 9%; }
+.palette { position: absolute; inset: 0; z-index: 2; background: var(--bg-soft); padding: 20% 7% 0; overflow: hidden; }
+.swatches { display: flex; justify-content: space-between; margin-bottom: 7%; }
 .swatches span { width: 15%; aspect-ratio: 1; border-radius: 50%; background: var(--c); box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5); }
 .swatches span.sel { outline-color: var(--ink); }
 .thumbs { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
-.thumbs img { position: static; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; opacity: 1; transform: none; transition: transform 0.5s var(--ease), opacity 0.5s var(--ease); }
+.thumbs img { position: static; width: 100%; aspect-ratio: 14 / 31; object-fit: cover; border-radius: 12px; opacity: 1; transform: none; transition: transform 0.5s var(--ease), opacity 0.5s var(--ease); }
 .thumbs img.out { opacity: 0; transform: scale(0.85) rotate(-4deg); }
 .swatches span { transition: transform 0.4s var(--ease), outline-color 0.3s; outline: 2.5px solid transparent; outline-offset: 2.5px; }
 .swatches span.sel { transform: scale(1.12); }
