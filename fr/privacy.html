@@ -51,12 +51,12 @@
   <main class="doc" lang="fr">
     <h1>Politique de confidentialité</h1>
     <p class="meta">Traduction fournie à titre informatif. En cas de divergence, seules les versions anglaise et espagnole font foi.</p>
-    <p class="meta">Dernière mise à jour : 23 septembre 2026 · Version 2.1</p>
+    <p class="meta">Dernière mise à jour : 26 septembre 2026 · Version 2.2</p>
 
-    <p>La présente politique explique quelles données personnelles l’application mobile Natsumar (« Natsumar », « l’app ») traite, pourquoi, sur quelle base juridique, pendant combien de temps, et quels sont vos droits. Elle est rédigée conformément à l’article 13 du Règlement général sur la protection des données de l’UE (RGPD) et à la loi organique espagnole 3/2018 (LOPDGDD).</p>
+    <p>La présente politique explique quelles données personnelles l’application mobile Natsumar (« Natsumar », « l’app ») traite, pourquoi, sur quelle base juridique, pendant combien de temps, et quels sont vos droits. Elle est rédigée conformément à l’article 13 du Règlement général sur la protection des données de l’UE (RGPD) et à la loi organique espagnole 3/2018 (LOPDGDD). Elle s’applique également au site web natsumar.com.</p>
 
     <div class="callout">
-      <p><strong>En bref :</strong> Natsumar n’affiche aucune publicité, ne propose aucun achat intégré et ne vend pas vos données. Vous pouvez l’utiliser sans compte. Les statistiques d’utilisation ne sont collectées que si vous l’acceptez. Les rapports de plantage servent à corriger les bugs. Un compte facultatif synchronise vos favoris, et vous pouvez le supprimer depuis l’app à tout moment.</p>
+      <p><strong>En bref :</strong> Natsumar n’affiche aucune publicité, ne propose aucun achat intégré et ne vend pas vos données. Vous pouvez l’utiliser sans compte. Les statistiques d’utilisation et les rapports de plantage ne sont collectés que si vous l’acceptez. Le site web n’utilise aucun cookie. Un compte facultatif synchronise vos favoris, et vous pouvez le supprimer depuis l’app à tout moment.</p>
     </div>
 
     <h2>1. Responsable du traitement</h2>
@@ -88,12 +88,22 @@
       <tr>
         <td><strong>Rapports de plantage</strong> (Firebase Crashlytics) : trace d’appels (stack trace), modèle de l’appareil, versions du système d’exploitation et de l’app, et un identifiant d’installation pseudonyme. Aucune donnée de compte.</td>
         <td>Détecter et corriger les plantages et les erreurs.</td>
-        <td>Intérêt légitime à assurer le bon fonctionnement et la sécurité de l’app (art. 6.1.f). Vous pouvez vous y opposer en nous écrivant.</td>
+        <td>Votre consentement (art. 6.1.a du RGPD et art. 22.2 de la LSSI), avec le même interrupteur que les statistiques d’utilisation : désactivé par défaut et modifiable à tout moment dans les Paramètres.</td>
       </tr>
       <tr>
         <td><strong>E-mails marketing</strong>, <em>uniquement si vous cochez la case distincte, décochée par défaut,</em> lors de la création de votre compte, puis confirmez votre choix depuis l’e-mail que nous vous envoyons (double opt-in) : votre adresse e-mail et une trace de votre consentement (date et heure, endroit où il a été donné, texte exact affiché, version de l’app).</td>
         <td>Vous envoyer de temps en temps des actualités : nouvelles collections de fonds d’écran, offres et future boutique de produits Natsumar.</td>
         <td>Votre consentement (art. 6.1.a du RGPD et art. 21 de la LSSI). Vous pouvez le retirer à tout moment depuis l’app ou via le lien de désabonnement présent dans chaque e-mail.</td>
+      </tr>
+      <tr>
+        <td><strong>Visites du site web</strong> (natsumar.com), via Cloudflare Web Analytics : la page consultée, la page d’où vous venez, le navigateur, le système d’exploitation, le type d’appareil, le pays approximatif et les temps de chargement. Aucun cookie, rien n’est enregistré sur votre appareil, aucun identifiant ni empreinte numérique (fingerprinting) n’est utilisé et votre adresse IP n’est pas conservée. Comme pour tout site web, notre hébergeur (GitHub Pages) reçoit aussi votre adresse IP pour afficher les pages et protéger le service. Si vous choisissez une langue dans le menu en bas de page, votre navigateur la mémorise (localStorage) ; elle n’est envoyée nulle part.</td>
+        <td>Afficher le site, en assurer la sécurité et compter les visites de manière agrégée pour savoir quelles pages intéressent.</td>
+        <td>Intérêt légitime à faire fonctionner et à améliorer le site (art. 6.1.f du RGPD). La mémorisation de votre langue est un service que vous demandez ; elle ne nécessite donc pas de consentement (art. 22.2 de la LSSI).</td>
+      </tr>
+      <tr>
+        <td><strong>Messages que vous nous envoyez</strong> (par exemple à support@natsumar.com) : votre adresse e-mail, le contenu du message et ce que vous choisissez d’y inclure.</td>
+        <td>Vous répondre et traiter votre demande.</td>
+        <td>Intérêt légitime à répondre aux personnes qui nous écrivent, ou démarches que vous nous demandez (art. 6.1.f et 6.1.b du RGPD).</td>
       </tr>
     </table>
     <p>Les données qualifiées de pseudonymes (identifiants d’instance de l’app et d’installation) ne révèlent pas à elles seules qui vous êtes, mais elles restent des données personnelles au sens du RGPD ; c’est pourquoi nous les traitons comme telles.</p>
@@ -103,20 +113,26 @@
     <p>Nous faisons appel aux prestataires suivants en qualité de sous-traitants, dans le cadre de contrats qui les obligent à protéger vos données et à ne les utiliser que sur nos instructions :</p>
     <ul>
       <li><strong>Supabase, Inc.</strong> (États-Unis) : base de données des comptes, de la connexion et des favoris. Serveurs situés aux États-Unis (Virginie).</li>
-      <li><strong>Google Ireland Ltd. / Google LLC</strong> : Firebase Analytics (uniquement avec votre consentement) et Firebase Crashlytics.</li>
+      <li><strong>Google Ireland Ltd. / Google LLC</strong> : Firebase Analytics et Firebase Crashlytics (uniquement avec votre consentement), ainsi que Gmail, la boîte de réception où arrivent vos messages.</li>
       <li><strong>Apple Inc.</strong> ou <strong>Google</strong> : uniquement si vous choisissez « Continuer avec Apple » ou « Continuer avec Google », afin de vérifier votre identité. Si vous utilisez la fonction « Masquer mon adresse e-mail » d’Apple, nous recevons une adresse relais, et non votre adresse réelle.</li>
-      <li><strong>Prestataire d’envoi d’e-mails</strong> : uniquement pour envoyer les e-mails de confirmation et les e-mails marketing auxquels vous avez consenti.</li>
+      <li><strong>Plus Five Five, Inc. (Resend)</strong> (États-Unis) : envoi de l’e-mail de confirmation et des e-mails marketing auxquels vous avez consenti, depuis des serveurs situés dans l’Union européenne (Irlande).</li>
+      <li><strong>Cloudflare, Inc.</strong> (États-Unis) : statistiques de visites du site web, sans cookies.</li>
+      <li><strong>GitHub, Inc.</strong> (États-Unis) : hébergement du site web (GitHub Pages).</li>
+      <li><strong>Soluciones Corporativas IP, S.L. (DonDominio)</strong> (Espagne) : nom de domaine et transfert vers notre boîte de réception des e-mails que vous nous envoyez.</li>
     </ul>
     <p>Nous ne communiquons vos données à personne d’autre, sauf si la loi l’exige (par exemple, sur réquisition d’un tribunal).</p>
 
     <h2>4. Transferts internationaux</h2>
-    <p>Certains de ces prestataires traitent des données aux États-Unis. Ces transferts reposent sur la décision d’adéquation de la Commission européenne relative au <strong>cadre de protection des données UE–États-Unis (EU-US Data Privacy Framework)</strong> lorsque le prestataire est certifié (comme Google) et, en tout état de cause, sur les <strong>clauses contractuelles types</strong> de la Commission européenne intégrées aux conditions de traitement des données de chaque prestataire.</p>
+    <p>Certains de ces prestataires traitent des données aux États-Unis. Ces transferts reposent sur la décision d’adéquation de la Commission européenne relative au <strong>cadre de protection des données UE-États-Unis (EU-US Data Privacy Framework)</strong> lorsque le prestataire est certifié (comme Google) et, en tout état de cause, sur les <strong>clauses contractuelles types</strong> de la Commission européenne intégrées aux conditions de traitement des données de chaque prestataire.</p>
 
     <h2>5. Durées de conservation</h2>
     <ul>
       <li><strong>Compte et favoris :</strong> tant que votre compte existe. La suppression de votre compte depuis l’app les efface immédiatement.</li>
       <li><strong>Statistiques d’utilisation :</strong> 14 mois, puis suppression automatique par Firebase.</li>
       <li><strong>Rapports de plantage :</strong> 90 jours.</li>
+      <li><strong>Statistiques du site web :</strong> Cloudflare ne conserve que des chiffres agrégés, qui ne permettent d’identifier personne. Votre adresse IP n’est pas enregistrée à des fins statistiques.</li>
+      <li><strong>Journaux du serveur du site :</strong> conservés par GitHub pendant une durée limitée pour des raisons de sécurité, selon sa propre politique.</li>
+      <li><strong>Messages que vous nous envoyez :</strong> le temps nécessaire pour vous répondre et assurer le suivi, et au maximum 2 ans après le dernier message.</li>
       <li><strong>Trace du consentement marketing :</strong> tant que le consentement est actif et, après son retrait ou la suppression de votre compte, jusqu’à 3 ans, uniquement pour prouver qu’il a été recueilli de manière licite (délai de prescription des infractions à la LSSI). Votre adresse e-mail n’est alors plus utilisée pour vous contacter.</li>
       <li><strong>Données stockées sur votre appareil</strong> (préférences, favoris locaux, cache d’images) : elles y restent jusqu’à ce que vous désinstalliez l’app ou effaciez ses données.</li>
     </ul>
@@ -150,5 +166,6 @@
       <div class="lang-switch"><a href="/privacy.html" hreflang="en">EN</a><a href="/es/privacy.html" hreflang="es">ES</a><a href="/fr/privacy.html" hreflang="fr">FR</a><a href="/it/privacy.html" hreflang="it">IT</a><a href="/pt/privacy.html" hreflang="pt">PT</a><a href="/de/privacy.html" hreflang="de">DE</a><a href="/ja/privacy.html" hreflang="ja">JA</a></div>
     </div>
   </footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "8d56ffd8764b4f39b99fcac7cfc05578"}'></script>
 </body>
 </html>

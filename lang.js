@@ -2,10 +2,11 @@
 // Each page is already in one language; this script only:
 //  - sends old ?lang=xx links (and the email's confirmation link) to the
 //    right URL, keeping the rest of the query;
-//  - on a first visit to an English page, takes visitors whose browser
-//    prefers another supported language to their version, once;
+//  - on an English page, takes visitors whose browser prefers another
+//    supported language to their version, unless they already chose one;
 //  - turns the footer's list of languages into a small menu and remembers
-//    the choice.
+//    the choice. Only an explicit choice is stored (a preference the visitor
+//    asked for, exempt from consent); automatic detection stores nothing.
 // Loaded synchronously in <head> so a redirect happens before paint.
 (function () {
   var supported = ["en", "es", "fr", "it", "pt", "de", "ja"];
@@ -38,7 +39,6 @@
     var nav = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"])
       .map(function (l) { return String(l).slice(0, 2).toLowerCase(); });
     var best = nav.filter(function (l) { return supported.indexOf(l) >= 0; })[0];
-    try { localStorage.setItem("lang", best || "en"); } catch (e) {}
     if (best && best !== "en" && go(best, params)) return;
   }
 

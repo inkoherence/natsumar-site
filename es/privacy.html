@@ -49,12 +49,12 @@
   <!-- ─────────────────────────── ESPAÑOL ─────────────────────────── -->
   <main class="doc" lang="es">
     <h1>Política de privacidad</h1>
-    <p class="meta">Última actualización: 23 de septiembre de 2026 · Versión 2.1</p>
+    <p class="meta">Última actualización: 26 de septiembre de 2026 · Versión 2.2</p>
 
-    <p>Esta política explica qué datos personales trata la app móvil Natsumar («Natsumar», «la app»), para qué, con qué base legal, durante cuánto tiempo y qué derechos tienes. Está redactada conforme al artículo 13 del Reglamento General de Protección de Datos (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD).</p>
+    <p>Esta política explica qué datos personales trata la app móvil Natsumar («Natsumar», «la app»), para qué, con qué base legal, durante cuánto tiempo y qué derechos tienes. Está redactada conforme al artículo 13 del Reglamento General de Protección de Datos (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD). También se aplica a la web natsumar.com.</p>
 
     <div class="callout">
-      <p><strong>En resumen:</strong> Natsumar no tiene anuncios ni compras dentro de la app, y no vende tus datos. Puedes usarla sin cuenta. La analítica de uso solo se recoge si dices que sí. Los informes de fallos sirven para corregir errores. La cuenta es opcional, sincroniza tus favoritos y puedes borrarla desde la app cuando quieras.</p>
+      <p><strong>En resumen:</strong> Natsumar no tiene anuncios ni compras dentro de la app, y no vende tus datos. Puedes usarla sin cuenta. La analítica de uso y los informes de fallos solo se recogen si dices que sí. La web no usa cookies. La cuenta es opcional, sincroniza tus favoritos y puedes borrarla desde la app cuando quieras.</p>
     </div>
 
     <h2>1. Responsable del tratamiento</h2>
@@ -86,12 +86,22 @@
       <tr>
         <td><strong>Informes de fallos</strong> (Firebase Crashlytics): traza del error, modelo de dispositivo, versión del sistema y de la app, y un identificador seudónimo de la instalación. Sin datos de cuenta.</td>
         <td>Detectar y corregir cierres inesperados y errores.</td>
-        <td>Interés legítimo en que la app funcione y sea segura (art. 6.1.f). Puedes oponerte escribiéndonos.</td>
+        <td>Tu consentimiento (art. 6.1.a RGPD y art. 22.2 LSSI), con el mismo interruptor que la analítica de uso: desactivado por defecto y modificable cuando quieras en Ajustes.</td>
       </tr>
       <tr>
         <td><strong>Emails de marketing</strong>, <em>solo si marcas la casilla aparte (desmarcada por defecto)</em> al crear tu cuenta y luego lo confirmas desde el email que te enviamos (doble opt-in): tu email y un registro del consentimiento (fecha y hora, dónde se dio, el texto exacto mostrado y la versión de la app).</td>
         <td>Enviarte novedades ocasionales: nuevas colecciones, ofertas y la futura tienda de productos de Natsumar.</td>
         <td>Tu consentimiento (art. 6.1.a RGPD y art. 21 LSSI). Puedes retirarlo en cualquier momento desde la app o con el enlace de baja de cada email.</td>
+      </tr>
+      <tr>
+        <td><strong>Visitas a la web</strong> (natsumar.com), mediante Cloudflare Web Analytics: la página visitada, la página de la que vienes, navegador, sistema operativo, tipo de dispositivo, país aproximado y tiempos de carga. No usa cookies, no guarda nada en tu dispositivo, no usa identificadores ni huellas digitales y no conserva tu dirección IP. Como cualquier web, nuestro alojamiento (GitHub Pages) también recibe tu dirección IP para servir las páginas y proteger el servicio. Si eliges un idioma en el menú del pie, tu navegador lo recuerda (localStorage); no se envía a ningún sitio.</td>
+        <td>Servir la web, mantenerla segura y contar las visitas de forma agregada para saber qué páginas interesan.</td>
+        <td>Interés legítimo en mantener y mejorar la web (art. 6.1.f RGPD). Recordar tu idioma es un servicio que tú pides, por lo que no requiere consentimiento (art. 22.2 LSSI).</td>
+      </tr>
+      <tr>
+        <td><strong>Mensajes que nos envías</strong> (por ejemplo, a support@natsumar.com): tu dirección de email, el contenido del mensaje y lo que decidas incluir.</td>
+        <td>Responderte y atender tu petición.</td>
+        <td>Interés legítimo en responder a quien nos escribe, o las gestiones que nos pidas (art. 6.1.f y 6.1.b RGPD).</td>
       </tr>
     </table>
     <p>Los datos seudónimos (identificadores de instalación) no revelan por sí solos quién eres, pero siguen siendo datos personales según el RGPD, y así los tratamos.</p>
@@ -101,9 +111,12 @@
     <p>Usamos estos proveedores como encargados del tratamiento, con contratos que les obligan a proteger tus datos y a usarlos solo siguiendo nuestras instrucciones:</p>
     <ul>
       <li><strong>Supabase, Inc.</strong> (EE. UU.): base de datos de cuentas, inicio de sesión y favoritos. Servidores en Estados Unidos (Virginia).</li>
-      <li><strong>Google Ireland Ltd. / Google LLC</strong>: Firebase Analytics (solo con tu consentimiento) y Firebase Crashlytics.</li>
+      <li><strong>Google Ireland Ltd. / Google LLC</strong>: Firebase Analytics y Firebase Crashlytics (solo con tu consentimiento), y Gmail, el buzón al que llegan tus mensajes.</li>
       <li><strong>Apple Inc.</strong> o <strong>Google</strong>: solo si eliges «Continuar con Apple» o «Continuar con Google», para verificar tu identidad. Si usas «Ocultar mi correo» de Apple, recibimos una dirección de reenvío, no la real.</li>
-      <li><strong>Proveedor de envío de emails</strong>: solo para enviar los emails de confirmación y de marketing que hayas consentido.</li>
+      <li><strong>Plus Five Five, Inc. (Resend)</strong> (EE. UU.): envía el email de confirmación y los emails de marketing que hayas consentido, desde servidores en la Unión Europea (Irlanda).</li>
+      <li><strong>Cloudflare, Inc.</strong> (EE. UU.): estadísticas de visitas a la web, sin cookies.</li>
+      <li><strong>GitHub, Inc.</strong> (EE. UU.): alojamiento de la web (GitHub Pages).</li>
+      <li><strong>Soluciones Corporativas IP, S.L. (DonDominio)</strong> (España): dominio y reenvío a nuestro buzón de los emails que nos escribes.</li>
     </ul>
     <p>No compartimos datos con nadie más salvo obligación legal (por ejemplo, un requerimiento judicial).</p>
 
@@ -115,6 +128,9 @@
       <li><strong>Cuenta y favoritos:</strong> mientras exista tu cuenta. Al borrarla desde la app se eliminan al instante.</li>
       <li><strong>Analítica:</strong> 14 meses; después Firebase la borra automáticamente.</li>
       <li><strong>Informes de fallos:</strong> 90 días.</li>
+      <li><strong>Estadísticas de la web:</strong> Cloudflare solo conserva cifras agregadas, que no identifican a nadie. Tu dirección IP no se guarda para las estadísticas.</li>
+      <li><strong>Registros del servidor de la web:</strong> GitHub los conserva un tiempo limitado por seguridad, según su propia política.</li>
+      <li><strong>Mensajes que nos envías:</strong> el tiempo necesario para responderte y hacer el seguimiento, y como máximo 2 años desde el último mensaje.</li>
       <li><strong>Registro del consentimiento de marketing:</strong> mientras el consentimiento esté activo y, tras retirarlo o borrar la cuenta, hasta 3 años únicamente como prueba de que se obtuvo legalmente (plazo de prescripción de las infracciones de la LSSI). Tu email deja de usarse para contactarte.</li>
       <li><strong>Datos en tu dispositivo</strong> (preferencias, favoritos locales, caché de imágenes): permanecen hasta que desinstalas la app o borras sus datos.</li>
     </ul>
@@ -149,5 +165,6 @@
       <div class="lang-switch"><a href="/privacy.html" hreflang="en">EN</a><a href="/es/privacy.html" hreflang="es">ES</a><a href="/fr/privacy.html" hreflang="fr">FR</a><a href="/it/privacy.html" hreflang="it">IT</a><a href="/pt/privacy.html" hreflang="pt">PT</a><a href="/de/privacy.html" hreflang="de">DE</a><a href="/ja/privacy.html" hreflang="ja">JA</a></div>
     </div>
   </footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "8d56ffd8764b4f39b99fcac7cfc05578"}'></script>
 </body>
 </html>
