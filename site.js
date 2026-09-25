@@ -13,6 +13,9 @@
     document.querySelectorAll("[data-clock]").forEach(function (el) {
       el.textContent = now.toLocaleTimeString(lang, { hour: "2-digit", minute: "2-digit", hour12: false });
     });
+    document.querySelectorAll("[data-wdate]").forEach(function (el) {
+      el.textContent = now.toLocaleDateString(lang, { weekday: "long", day: "numeric" }).replace(/,/g, "");
+    });
     document.querySelectorAll("[data-date]").forEach(function (el) {
       el.textContent = now.toLocaleDateString(lang, { weekday: "long", day: "numeric", month: "long" });
     });
@@ -67,7 +70,7 @@
         setTimeout(function () {
           img.classList.add("out");
           setTimeout(function () {
-            img.src = "img/art/" + ids[k] + "-360.webp";
+            img.src = "/img/art/" + ids[k] + "-360.webp";
             img.onload = function () { img.classList.remove("out"); };
           }, 250);
         }, k * 90);
