@@ -373,19 +373,23 @@ html[data-lang]:not([data-lang="ja"]) [lang="ja"]:not(html) { display: none !imp
 /* Nav call to action: a glass pill like the language menu, with the app's
    own round icon in front (drawn in CSS, so every page gets it). */
 .nav-cta {
-  display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.35rem 1rem 0.35rem 0.35rem; border-radius: 999px;
+  position: relative; display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.62rem 1.05rem 0.62rem 3.05rem; margin-left: 1.6rem; border-radius: 999px;
   background: var(--glass); border: 1px solid var(--glass-line); color: var(--ink);
   -webkit-backdrop-filter: blur(16px) saturate(1.4); backdrop-filter: blur(16px) saturate(1.4);
   font-weight: 700; font-size: 0.9rem; line-height: 1; letter-spacing: -0.005em;
   box-shadow: 0 6px 18px -10px rgba(60, 30, 20, 0.35);
-  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
+/* The app icon as a badge that breaks out of the pill on the left. */
 .nav-cta::before {
-  content: ""; width: 30px; height: 30px; border-radius: 50%; flex: none;
-  background: url(/img/app-icon-96.webp) center / cover no-repeat;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  content: ""; position: absolute; left: -14px; top: 50%; width: 52px; height: 52px; border-radius: 50%;
+  transform: translateY(-50%); background: #fff url(/img/app-icon-144.webp) center / 92% no-repeat;
+  box-shadow: 0 0 0 2.5px #fff, 0 6px 16px -4px rgba(60, 30, 20, 0.45);
+  transition: transform 0.4s var(--ease);
 }
 .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -10px rgba(60, 30, 20, 0.45); }
+.nav-cta:hover::before { transform: translateY(-50%) rotate(-10deg) scale(1.06); }
 .nav-cta svg { display: block; width: 15px; height: 15px; flex: none; opacity: 0.7; }
 
 /* Store buttons: one band of light crosses both, as if they were one piece.
