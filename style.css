@@ -92,9 +92,14 @@ html[data-lang]:not([data-lang="ja"]) [lang="ja"]:not(html) { display: none !imp
   display: flex; align-items: center; justify-content: space-between;
   max-width: var(--max); margin: 0 auto; padding: 1.25rem 1.5rem;
 }
+/* The wordmark is the logo image; the text stays in the markup for screen
+   readers and search engines. --h sets the height, the width follows. */
 .wordmark {
-  font-family: "Montserrat", sans-serif; font-weight: 900;
-  font-size: 1.6rem; letter-spacing: -0.05em;
+  --h: 2.5rem;
+  display: inline-block; height: var(--h); width: calc(var(--h) * 4.02);
+  background: url("img/logo-natsumar.webp") no-repeat left center / contain;
+  color: transparent; overflow: hidden; white-space: nowrap; text-indent: 110%;
+  font-size: 1rem;
 }
 
 /* Language picker: one small button; lang.js turns the list of links into
@@ -362,9 +367,9 @@ html[data-lang]:not([data-lang="ja"]) [lang="ja"]:not(html) { display: none !imp
 .col img { width: 100%; aspect-ratio: 9 / 19.5; object-fit: cover; border-radius: 18px; }
 @keyframes colDrift { to { transform: translateY(-50%); } }
 .cta::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(13, 11, 12, 0.76); }
-.cta h2, .cta .wordmark.big { text-shadow: 0 2px 30px rgba(0, 0, 0, 0.45); }
+.cta h2 { text-shadow: 0 2px 30px rgba(0, 0, 0, 0.45); }
 .cta-in { position: relative; padding: 6rem 1.5rem; max-width: 48rem; }
-.cta .wordmark.big { font-size: clamp(1.2rem, 2vw, 1.5rem); opacity: 0.85; margin-bottom: 1.5rem; }
+.cta .wordmark.big { --h: clamp(2.6rem, 5vw, 3.6rem); background-position: center; margin-bottom: 1.5rem; }
 .cta h2 { font-size: clamp(2.3rem, 6vw, 4.6rem); font-weight: 900; letter-spacing: -0.045em; margin-bottom: 2.5rem; }
 .cta .stores { justify-content: center; }
 .cta .store-btn { background: #fff; color: #0f0d0c; }
@@ -402,7 +407,7 @@ html[data-lang]:not([data-lang="ja"]) [lang="ja"]:not(html) { display: none !imp
   color: var(--ink-2); font-size: 0.9rem;
 }
 .footer .brand { display: flex; align-items: center; gap: 1rem; }
-.footer .brand .wordmark { font-size: 1.2rem; color: var(--ink); }
+.footer .brand .wordmark { --h: 2rem; }
 .footer nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
 .footer nav a:hover { color: var(--ink); }
 
